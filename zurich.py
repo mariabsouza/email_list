@@ -7,19 +7,11 @@ outlook = win32.Dispatch('outlook.application')
 # criar um email
 email = outlook.CreateItem(0)
 
-email_list = pd.read_excel('D:\Projeto Zurich/email_list.xlsx')
-emails = email_list['EMAIL']
-
-# iterate through the records
-for i in range(len(emails)):
-  
-    # for every record get the name and the email addresses
-    email = emails[i]
-
-
+ler = pd.read_excel ('D:\Projeto Zurich/email_list.xlsx')
 # configurar as informações do seu e-mail
-email.To = emails
-email.Subject = "Informações sobre o seu sinistro!"
+for index, linha in ler.iterrows ():
+    email.to = (linha["EMAIL"])
+email.Subject = "Informações sobre o seu sinistro!" +  (linha ["NAME"])
 email.HTMLBody = """
 <p>Prezado(a) segurado(a),</p>
 <p>Foram realizadas diversas tentativas de contato sem sucesso para agendar a realização da visita da assistência técnica Electrolux, por esse motivo estamos cancelando o seu sinistro.</p>
