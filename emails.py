@@ -6,18 +6,18 @@ import pandas as pd
 outlook = win32.Dispatch('outlook.application')
 
 # reading the file using the pandas library
-read = pd.read_excel("D:\Projeto Zurich/email_list.xlsx")
+read = pd.read_excel("The path of your file here.xlsx")
 
 # Setting the e-mail informations
-for dados, linha in read.iterrows():
+for data, row in read.iterrows():
 
     email = outlook.CreateItem(0)
-    email.to = (linha["EMAIL"])
-    email.Subject = "Olá, " + (linha["NAME"])
+    email.to = (row["EMAIL"])
+    email.Subject = "Olá, " + (row["NAME"])
 
     email.HTMLBody = """
     <p>
-    Good morning, """ + (linha["NOME"]) + """ How are you?<br>
+    Good morning, """ + (row["NOME"]) + """! How are you?<br>
     <br>
     I am looking foward to see you! <br>
     <br>
