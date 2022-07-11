@@ -12,6 +12,4 @@ It´s also possible to make personalized e-mail with different names, last name 
 
 * In your excel file, it´s important to name the columns so you can call them and personalize your e-mail
 
-![alt text](https://www.imagemhost.com.br/images/2021/07/22/Captura-de-tela-2021-07-22-145710.png)
-
 * If you want to use a data from the spreadsheet to personalize each e-mail, you should use ```(linha["THE NAME OF YOUR COLUMN"])```
